@@ -14,7 +14,7 @@
 
     <androidx.cardview.widget.CardView
         app:cardCornerRadius="@dimen/_4sdp"
-        android:layout_margin="@dimen/_8sdp"
+        android:layout_margin="@dimen/_4sdp"
         app:cardElevation="@dimen/_4sdp"
         android:elevation="@dimen/_4sdp"
         android:layout_width="match_parent"
@@ -44,8 +44,7 @@
                 android:id="@+id/name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="@{`\t`+jsondata.name}"
+                android:text="@{jsondata.name}"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -68,8 +67,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/_12ssp"
-                android:layout_marginTop="2dp"
-                android:text="@{`\t`+jsondata.desc}"
+                android:text="@{jsondata.desc}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_desc" />
@@ -90,9 +88,8 @@
                 android:id="@+id/lang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
                 android:textSize="@dimen/_12ssp"
-                android:text="@{`\t`+jsondata.lang}"
+                android:text="@{jsondata.lang}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_lang" />
@@ -113,10 +110,8 @@
                 android:id="@+id/privacy"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
                 android:textSize="@dimen/_12ssp"
-                android:lines="1"
-                android:text="@{`\t`+jsondata.privacy_status}"
+                android:text="@{jsondata.privacy_status}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_url" />
