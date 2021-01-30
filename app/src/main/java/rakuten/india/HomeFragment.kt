@@ -43,17 +43,20 @@ class HomeFragment : Fragment() {
             if (binding.platform.text.toString().trim().equals("")) {
             Toast.makeText(activity,"Please enter Platform",Toast.LENGTH_SHORT).show()
             } else if (binding.orgnizations.text.toString().trim().equals("")) {
-                Toast.makeText(activity,"Please enter org",Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity,"Please enter orgnizations",Toast.LENGTH_SHORT).show()
             } else {
                 binding.progressBar1.visibility=View.VISIBLE
-                mainViewModel.getGitHubRepo("android", "rakutentech").observe(viewLifecycleOwner, Observer {
+                mainViewModel.getGitHubRepo(binding.platform.text.toString().trim(), binding.orgnizations.text.toString().trim()).observe(viewLifecycleOwner, Observer {
                     if (it != null) {
                         binding.progressBar1.visibility=View.GONE
+                        binding.list.visibility=View.VISIBLE
                         linearLayoutManager = LinearLayoutManager(context)
                         list.layoutManager = linearLayoutManager
                         list.adapter = GithubRepoAdapter(requireContext(), it.items)
+
                     }else{
                         binding.progressBar1.visibility=View.GONE
+                        binding.list.visibility=View.GONE
                     }
                 })
             }
