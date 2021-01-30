@@ -27,8 +27,6 @@ class HomeFragment : Fragment() {
     lateinit var networkHelper: NetworkHelper
     private lateinit var linearLayoutManager: LinearLayoutManager
 
-    private var githubRepoSearchPojo = mutableListOf<GithubRepoSearchPojo>()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -57,4 +55,5 @@ class HomeFragment : Fragment() {
             }
         }
     }
+
 }

@@ -36,7 +36,7 @@ class GithubRepoAdapter(
         gitJsonModel.name = githubRepoSearchPojo[position].name
         gitJsonModel.desc = githubRepoSearchPojo[position].description
         gitJsonModel.lang = githubRepoSearchPojo[position].language
-        gitJsonModel.privacy_status = githubRepoSearchPojo[position].url
+        gitJsonModel.privacy_status = githubRepoSearchPojo[position].svnUrl
         return gitJsonModel
     }
 
