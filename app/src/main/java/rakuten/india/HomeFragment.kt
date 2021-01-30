@@ -1,5 +1,6 @@
 package rakuten.india
 
+import android.opengl.Visibility
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -44,12 +45,15 @@ class HomeFragment : Fragment() {
             } else if (binding.orgnizations.text.toString().trim().equals("")) {
                 Toast.makeText(activity,"Please enter org",Toast.LENGTH_SHORT).show()
             } else {
+                binding.progressBar1.visibility=View.VISIBLE
                 mainViewModel.getGitHubRepo("android", "rakutentech").observe(viewLifecycleOwner, Observer {
                     if (it != null) {
-
+                        binding.progressBar1.visibility=View.GONE
                         linearLayoutManager = LinearLayoutManager(context)
                         list.layoutManager = linearLayoutManager
                         list.adapter = GithubRepoAdapter(requireContext(), it.items)
+                    }else{
+                        binding.progressBar1.visibility=View.GONE
                     }
                 })
             }
